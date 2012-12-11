@@ -9,19 +9,22 @@ ACTIVE_FS = "%s_active"
 
 DEBUG = True
 
+def print_usage():
+    print 'usage: button_xml.py slug -n NORMAL_FS -a ACTIVE_FS'
+    sys.exit(2)
+    
+
 def main(argv):
     global NORMAL_FS
     global ACTIVE_FS
     
     if len(argv) == 0:
-        print "please input NAME"
-        return
+        print_usage()
     if len(argv) > 1:
         try:
            opts, args = getopt.getopt(argv[1:],"n:a:")
         except getopt.GetoptError:
-           print 'usage: button_xml.py slug -n NORMAL_FS -a ACTIVE_FS'
-           sys.exit(2)
+            print_usage()
         if DEBUG:
             print opts
         for opt, arg in opts:

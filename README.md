@@ -3,6 +3,18 @@ android-helper
 
 Helper script to do common task
 
+clogcat.py
+----------
+colored logcat with tag filtering, modified from Jeff Sharkey's code
+
+### sample
+
+    clogcat.py 
+    clogcat.py -s MainActivity // filter log by one tag
+    clogcat.py -x E // filter log by log level (E,W,V,D,I)
+    clogcat.py -w white_list.txt // filter log by a list of tags, one tag per line in the txt file
+
+
 to9patch.py
 -----------
 create 9patch with simple options.
